@@ -1,0 +1,44 @@
+﻿// how to put digital product into cart?????
+            //
+            List<IProductModel> cart = AddSampleData();
+            CustomerModel customer = GetCustomer();
+
+            foreach (IProductModel prod in cart)
+            {
+                prod.ShipItem(customer);
+
+                if (prod is IDigitalProductModel digital)
+                {
+                    Console.WriteLine($"For the { digital.Title } you have{ digital.TotalDownloadsLeft}");
+                }
+                
+            }
+
+            Console.ReadLine();
+
+        }
+
+        private static CustomerModel GetCustomer()
+        {
+            return new CustomerModel
+            {
+                FirstName = "Martin",
+                LastName = "Tamm",
+                City = "Tallinn",
+                EmailAddress = "adr@mail.com",
+                PhoneNumber = "1341234134"
+            };
+        }
+
+        private static List<IProductModel> AddSampleData()
+        {
+            List<IProductModel> output = new List<IProductModel>();
+
+            output.Add(new PhysicalProductModel { Title = "Tshirt" });
+            output.Add(new PhysicalProductModel { Title = "Hard Drive" });
+            output.Add(new PhysicalProductModel { Title = "Cool stuff" });
+
+            output.Add(new DigitalProductModel { Title = "Lessons source" });
+
+            return output;
+        }
