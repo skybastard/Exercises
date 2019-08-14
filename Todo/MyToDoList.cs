@@ -8,14 +8,14 @@ namespace Todo
 {
     public static class MyToDoList
     {
-        public static List<string> todoList { get; set; } = new List<string>();
+        public static List<string> todoList { get; set; }
+        public static string filePath = "C:/Users/ILS/Documents/todo.txt";
 
         public static void Add(string description)
         {
             todoList.Add(description);
-            //SaveData(todoList, filePath);
+            
         }
-
 
         public static void Print()
         {
@@ -25,17 +25,17 @@ namespace Todo
             }
         }
 
-        public static void printAll(string filePath)
+        public static void printAll()
         {
-            ReadData(filePath);
             foreach (var item in todoList)
             {
                 Console.WriteLine(item);
             }
         }
 
-        public static void SaveData(List<string> todoList,string filePath)
+        public static void SaveData()
         {
+            //TODO streamwriter creates duplicates
             System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
             foreach (var item in todoList)
             {
@@ -45,14 +45,14 @@ namespace Todo
             file.Close();
         }
 
-        public static List<string> ReadData(string filePath)
+        public static void ReadData()
         {
             if (!System.IO.File.Exists(filePath))
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
             }
             todoList = System.IO.File.ReadAllLines(filePath).ToList();
-            return todoList;
+           
         }
 
 
