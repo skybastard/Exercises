@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodoChallenge
+namespace Todo
 {
-    public static class Todo
+    public static class MyToDoList
     {
-        public static string description { get; set; }
         public static List<string> todoList { get; set; } = new List<string>();
 
         public static void Add(string description)
         {
             todoList.Add(description);
+            //SaveData(todoList, filePath);
         }
 
-       
+
         public static void Print()
         {
             for (int i = 0; i < 3; i++)
@@ -25,24 +25,33 @@ namespace TodoChallenge
             }
         }
 
-        public static void printAll()
+        public static void printAll(string filePath)
         {
-            foreach(var item in todoList)
+            ReadData(filePath);
+            foreach (var item in todoList)
             {
                 Console.WriteLine(item);
             }
         }
 
-        public static void SaveData(string data, string filePath)
+        public static void SaveData(List<string> todoList,string filePath)
         {
             System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
-            file.WriteLine(data);
+            foreach (var item in todoList)
+            {
+                file.WriteLine(item);
+            }
+            todoList.Clear();
+            file.Close();
         }
 
         public static List<string> ReadData(string filePath)
         {
-            string lines = System.IO.File.ReadAllLines(filePath).ToList().ToString();
-            todoList.Add(lines);
+            if (!System.IO.File.Exists(filePath))
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
+            }
+            todoList = System.IO.File.ReadAllLines(filePath).ToList();
             return todoList;
         }
 

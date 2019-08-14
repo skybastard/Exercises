@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="main.txt" />
+    <Content Include="todoProject.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
