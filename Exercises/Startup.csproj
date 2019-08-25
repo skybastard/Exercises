@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AsyncAwaitDemo\AsyncAwaitDemo.csproj">
+      <Project>{ffbb2cef-af55-4730-a4b8-b9bd13e40caa}</Project>
+      <Name>AsyncAwaitDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExceptionsLibrary\ExceptionsLibrary.csproj">
       <Project>{d836ff91-d4c6-43d4-9a8d-8af67cb58db3}</Project>
       <Name>ExceptionsLibrary</Name>

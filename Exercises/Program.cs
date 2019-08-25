@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AsyncAwaitDemo;
 using ExceptionsLibrary;
 using GenericsDemo;
 using InterfacesDemo;
@@ -17,16 +18,30 @@ namespace Exercises
         static void Main(string[] args)
         {
 
-            DataDemo fileData = new DataDemo();
+            Console.WriteLine();
+            Console.WriteLine("Simple Async Demo App");
+            Console.WriteLine();
+            Console.WriteLine("Press 1 for Normal Execute");
+            Console.WriteLine("Press 2 for Async Execute");
 
-            //fileData.ReadText(fileData.filePath);
-            //fileData.WriteText(fileData.filePath);
+            ConsoleKey key;
+            do
+            {
+                // Key is available - read it
+                key = Console.ReadKey(true).Key;
 
-            //fileData.PopulatePersonObject(fileData.filePath);
+                if (key == ConsoleKey.D1)
+                {
+                    WebsiteDownload.NormalExecute();
+                }
+                else if (key == ConsoleKey.D2)
+                {
+                    WebsiteDownload.AsyncExecute();
+                }
 
-            fileData.SavePersonObject(fileData.filePath);
+            } while (key != ConsoleKey.Escape);
 
-            Console.ReadLine();
+            Console.WriteLine();
 
         }
 
