@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{877D1AF0-F15B-4459-95B4-02FC1690EB36}</ProjectGuid>
+    <ProjectGuid>{9FDF65E4-5806-465F-ABAE-DB6DCFBA8981}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InterfacesDemo</RootNamespace>
-    <AssemblyName>InterfacesDemo</AssemblyName>
+    <RootNamespace>TextFileDataDemo</RootNamespace>
+    <AssemblyName>TextFileDataDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerModel.cs" />
-    <Compile Include="DigitalProductModel.cs" />
-    <Compile Include="IDigitalProductModel.cs" />
-    <Compile Include="IProductModel.cs" />
-    <Compile Include="PhysicalProductModel.cs" />
+    <Compile Include="DataDemo.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

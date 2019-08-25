@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{877D1AF0-F15B-4459-95B4-02FC1690EB36}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InterfacesDemo</RootNamespace>
-    <AssemblyName>InterfacesDemo</AssemblyName>
+    <ProjectGuid>{942840BF-2734-49C6-B1D1-17A5BA052CA1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Exercises</RootNamespace>
+    <AssemblyName>Exercises</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,15 +43,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerModel.cs" />
-    <Compile Include="DigitalProductModel.cs" />
-    <Compile Include="IDigitalProductModel.cs" />
-    <Compile Include="IProductModel.cs" />
-    <Compile Include="PhysicalProductModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Main.txt" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExceptionsLibrary\ExceptionsLibrary.csproj">
+      <Project>{d836ff91-d4c6-43d4-9a8d-8af67cb58db3}</Project>
+      <Name>ExceptionsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericsDemo\Generics%28object to file%29.csproj">
+      <Project>{92f7f23d-2e99-4f43-8dfa-f32bdfea33ae}</Project>
+      <Name>Generics%28object to file%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterfacesDemo\InterfacesDemo.csproj">
+      <Project>{877d1af0-f15b-4459-95b4-02fc1690eb36}</Project>
+      <Name>InterfacesDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextFileDataDemo\TextFileDataDemo.csproj">
+      <Project>{9fdf65e4-5806-465f-abae-db6dcfba8981}</Project>
+      <Name>TextFileDataDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Todo\Todo.csproj">
+      <Project>{3a8029b7-2fe2-41b7-997a-da1ff70af834}</Project>
+      <Name>Todo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

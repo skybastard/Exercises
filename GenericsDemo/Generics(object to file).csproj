@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{942840BF-2734-49C6-B1D1-17A5BA052CA1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Exercises</RootNamespace>
-    <AssemblyName>Exercises</AssemblyName>
+    <ProjectGuid>{92F7F23D-2E99-4F43-8DFA-F32BDFEA33AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenericsDemo</RootNamespace>
+    <AssemblyName>GenericsDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,28 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="GenericTextFileProcessor.cs" />
+    <Compile Include="LogEntry.cs" />
+    <Compile Include="OriginalTextFileProcessor.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GenericsDemo\GenericsDemo.csproj">
-      <Project>{92f7f23d-2e99-4f43-8dfa-f32bdfea33ae}</Project>
-      <Name>GenericsDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterfacesDemo\InterfacesDemo.csproj">
-      <Project>{877d1af0-f15b-4459-95b4-02fc1690eb36}</Project>
-      <Name>InterfacesDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Todo\Todo.csproj">
-      <Project>{3a8029b7-2fe2-41b7-997a-da1ff70af834}</Project>
-      <Name>Todo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <Content Include="Main.txt" />
+    <Content Include="todoProject.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

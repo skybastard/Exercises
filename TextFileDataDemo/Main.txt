@@ -1,0 +1,15 @@
+﻿static void Main(string[] args)
+        {
+
+            DataDemo fileData = new DataDemo();
+
+            //fileData.ReadText(fileData.filePath);
+            //fileData.WriteText(fileData.filePath);
+
+            //fileData.PopulatePersonObject(fileData.filePath);
+
+            fileData.SavePersonObject(fileData.filePath);
+
+            Console.ReadLine();
+
+        }

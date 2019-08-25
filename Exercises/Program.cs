@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExceptionsLibrary;
 using GenericsDemo;
 using InterfacesDemo;
+using TextFileDataDemo;
 using Todo;
 
 
@@ -14,15 +16,17 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            MyToDoList.ReadData();
-            while (true)
-            {
-                UIControls.UIinput(Console.ReadLine());
-            }
 
-            
+            DataDemo fileData = new DataDemo();
 
+            //fileData.ReadText(fileData.filePath);
+            //fileData.WriteText(fileData.filePath);
 
+            //fileData.PopulatePersonObject(fileData.filePath);
+
+            fileData.SavePersonObject(fileData.filePath);
+
+            Console.ReadLine();
 
         }
 
