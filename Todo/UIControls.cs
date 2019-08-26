@@ -8,31 +8,44 @@ namespace Todo
 {
     public static class UIControls
     {
-        public static void UIinput(string input)
+        public static void UIinput()
         {
-            Console.WriteLine("Commands: add, print, printall, exit");
-            switch (input)
+            Console.WriteLine("Commands: 1 = add, 2 = print TOP 3, 3 = printall, esc = save and exit");
+            //ConsoleKey key = Console.ReadKey(true).Key;
+
+
+            ConsoleKey key;
+            do
             {
-                case "add":
-                    Console.WriteLine("Enter new task:");
-                    MyToDoList.todoList.Add(Console.ReadLine());
-                    MyToDoList.printAll();
-                    break;
-                case "exit":
-                    MyToDoList.SaveData();
-                    Environment.Exit(0);
-                    break;
-                case "print":
-                    MyToDoList.Print();
-                    break;
-                case "printall":
-                    MyToDoList.printAll();
-                    break;
-                    // TODO add Done functionality and reorder functionality
-                default:
-                    break;
-            }
-            
+                key = Console.ReadKey(true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.D1:
+                        Console.WriteLine("Enter new item: ");
+                        MyToDoList.todoList.Add(Console.ReadLine());
+                        break;
+
+                    case ConsoleKey.D2:
+                        MyToDoList.Print();
+                        break;
+
+                    case ConsoleKey.D3:
+                        MyToDoList.Print();
+                        break;
+
+                    case ConsoleKey.Escape:
+                        MyToDoList.SaveData();
+
+                        break;
+                    
+                    default:
+                        break;
+                }
+
+
+
+            } while (key != ConsoleKey.Escape);
+
         }
     }
 }

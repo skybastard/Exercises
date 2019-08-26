@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,38 +22,30 @@ namespace Todo
         {
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(todoList[i]);
+                Console.WriteLine(i+". "+
+                todoList[i]);
             }
         }
 
         public static void printAll()
         {
+            int i = 1;
             foreach (var item in todoList)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(i+". " + item);
+                i++;
             }
         }
 
         public static void SaveData()
         {
-            //TODO streamwriter creates duplicates
-            System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
-            foreach (var item in todoList)
-            {
-                file.WriteLine(item);
-            }
-            todoList.Clear();
-            file.Close();
+            File.WriteAllLines(filePath, todoList);
+            
         }
 
         public static void ReadData()
         {
-            if (!System.IO.File.Exists(filePath))
-            {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true);
-            }
-            todoList = System.IO.File.ReadAllLines(filePath).ToList();
-           
+            todoList = File.ReadAllLines(filePath).ToList();
         }
 
 

@@ -17,32 +17,17 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
+            
+            MyToDoList.ReadData();
+            MyToDoList.Print();
+            UIControls.UIinput();
 
-            Console.WriteLine();
-            Console.WriteLine("Simple Async Demo App");
-            Console.WriteLine();
-            Console.WriteLine("Press 1 for Normal Execute");
-            Console.WriteLine("Press 2 for Async Execute");
+        }
 
-            ConsoleKey key;
-            do
-            {
-                // Key is available - read it
-                key = Console.ReadKey(true).Key;
 
-                if (key == ConsoleKey.D1)
-                {
-                    WebsiteDownload.NormalExecute();
-                }
-                else if (key == ConsoleKey.D2)
-                {
-                    WebsiteDownload.AsyncExecute();
-                }
-
-            } while (key != ConsoleKey.Escape);
-
-            Console.WriteLine();
-
+        static string GetMessage()
+        {
+            return "This is a test";
         }
 
         

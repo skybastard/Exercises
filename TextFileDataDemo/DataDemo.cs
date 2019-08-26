@@ -64,7 +64,12 @@ namespace TextFileDataDemo
         {
             // populate people list with previous method and add another person
             PopulatePersonObject(filePath);
-            people.Add(new Person { firstName = "Martin", lastName = "Tamm", URL = "Homepage" });
+            people.Add(new Person { firstName = "OOF", lastName = "OOF", URL = "Homepage" });
+            foreach (var person in people)
+            {
+                Console.WriteLine($"{person.firstName } {person.lastName } : {person.URL}");
+            }
+
 
             List<string> output = new List<string>();
 

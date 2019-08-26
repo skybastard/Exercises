@@ -21,6 +21,9 @@ namespace AsyncAwaitDemo
             Console.WriteLine($"Total Normal execution time: { elapsedMs }");
         }
 
+
+
+
         public static async void AsyncExecute()
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
