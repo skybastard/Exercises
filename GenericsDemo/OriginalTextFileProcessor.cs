@@ -21,9 +21,9 @@ namespace GenericsDemo
                 var vals = line.Split(',');
                 p = new Person();
 
-                p.FirstName = vals[0];
-                p.IsAlive = bool.Parse(vals[1]);
-                p.LastName = vals[2];
+                p.firstName = vals[0];
+                p.isAlive = bool.Parse(vals[1]);
+                p.lastName = vals[2];
 
                 output.Add(p);
             }
@@ -35,11 +35,11 @@ namespace GenericsDemo
             List<string> lines = new List<string>();
 
             //Add header row
-            lines.Add("FirstName, IsAlive, LastName");
+            lines.Add("firstName, isAlive, LastName");
 
             foreach(var p in people)
             {
-                lines.Add($"{ p.FirstName }, { p.IsAlive }, { p.LastName }");
+                lines.Add($"{ p.firstName }, { p.isAlive }, { p.lastName }");
             }
 
             System.IO.File.WriteAllLines(filePath, lines);        }

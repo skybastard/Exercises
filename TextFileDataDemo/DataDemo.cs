@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using GenericsDemo;
 
 namespace TextFileDataDemo
 {
     public class DataDemo
     {
+        // Person class is from GenericsDemo Class
         public string filePath = "C:/Users/ILS/Documents/test.txt";
         List<Person> people = new List<Person>();
 

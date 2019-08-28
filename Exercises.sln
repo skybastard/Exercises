@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLibrary", "Except
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileDataDemo", "TextFileDataDemo\TextFileDataDemo.csproj", "{9FDF65E4-5806-465F-ABAE-DB6DCFBA8981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitDemo", "AsyncAwaitDemo\AsyncAwaitDemo.csproj", "{FFBB2CEF-AF55-4730-A4B8-B9BD13E40CAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitDemo", "AsyncAwaitDemo\AsyncAwaitDemo.csproj", "{FFBB2CEF-AF55-4730-A4B8-B9BD13E40CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqDemo", "LinqDemo\LinqDemo.csproj", "{BB1A9F25-B759-4E78-B41F-4749646C5A62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FFBB2CEF-AF55-4730-A4B8-B9BD13E40CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFBB2CEF-AF55-4730-A4B8-B9BD13E40CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFBB2CEF-AF55-4730-A4B8-B9BD13E40CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

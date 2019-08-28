@@ -42,11 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataDemo.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericsDemo\Generics%28object to file%29.csproj">
+      <Project>{92f7f23d-2e99-4f43-8dfa-f32bdfea33ae}</Project>
+      <Name>Generics%28object to file%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

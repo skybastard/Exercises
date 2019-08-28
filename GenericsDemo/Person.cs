@@ -9,8 +9,28 @@ namespace GenericsDemo
     public class Person
     {
 
-        public string FirstName { get; set; }
-        public bool IsAlive { get; set; }
-        public string LastName { get; set; }
+        public string firstName { get; set; }
+        public bool isAlive { get; set; }
+        public string lastName { get; set; }
+        public string URL { get; set; }
+        public int yearsExperience { get; set; }
+        public DateTime birthday { get; set; }
+
+        public string fullname
+        {
+            get
+            {
+                return $"{firstName }{ lastName}";
+            }
+        }
+
+        public void SayHello()
+        {
+            Console.WriteLine($"Hello { firstName }{lastName}"  );
+        }
+
+        
     }
+
+   
 }
