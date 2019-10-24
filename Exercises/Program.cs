@@ -10,6 +10,7 @@ using InterfacesDemo;
 using LinqDemo;
 using TextFileDataDemo;
 using Todo;
+using System.IO;
 
 
 namespace Exercises
@@ -20,10 +21,10 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
+            printPrimeSum(10);
 
 
-
-            SumOfDigits(1556666);
+           
 
 
             Console.ReadLine();
@@ -94,6 +95,35 @@ namespace Exercises
             }
             Console.WriteLine($"sum of integer{ num } is { sum }");
         }
+
+        // 28 reverse words of a sentence
+         static void ReverseCentence()
+        {
+            string input = "This is my centece that i will reverse so it will be awesome";       
+            string[] words = input.Split(new[] { " " }, StringSplitOptions.None);
+            string result = "";
+            for(int i = words.Length -1; i >= 0; i--)
+            {
+                result += words[i] + " ";
+            }
+            Console.WriteLine(result);
+        }
+
+        // 29 find the size of a file
+        string filepath = "D:\\Download\\OrbxFTXTreesHD100";
+        static void FileSize(string path)
+        {
+            FileInfo fileInfo = new FileInfo(path);
+            Console.WriteLine(fileInfo.Length.ToString());
+        }
+
+        // 30 convert hex to decimal
+        static void HexToDecimal(string hexVal)
+        {
+            int decimalValue = int.Parse(hexVal, System.Globalization.NumberStyles.HexNumber);
+            Console.WriteLine(decimalValue);
+        }
+
 
         #endregion
 
