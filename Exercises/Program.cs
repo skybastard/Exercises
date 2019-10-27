@@ -21,7 +21,7 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
-            printPrimeSum(10);
+            OddCharacters();
 
 
            
@@ -123,6 +123,60 @@ namespace Exercises
             int decimalValue = int.Parse(hexVal, System.Globalization.NumberStyles.HexNumber);
             Console.WriteLine(decimalValue);
         }
+
+        // 31 multiply array elements
+        static void MultiplyArrays()
+        {
+            int[] array1 = { 2, 1, 4, 5, 6, 7 };
+            int[] array2 = { 4, 6, 3, 7, 78, 9};
+            int[] output = new int[array1.Length];
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                output[i] = array1[i] * array2[i];
+                Console.WriteLine(output[i]);
+            }
+            
+        }
+
+        // 32 write 4 copies of last 4 strings in sentence
+        //string input = "This is my sentece that i will reverse so it will be awesome";
+        static void CopyFourLastStrings(string input)
+        {
+            string output = "";
+            for (int i = 0; i < 4; i++)
+            {
+                output += input.Substring(input.Length - 4);
+            }
+            Console.WriteLine(output);
+        }
+
+        // 41 check if string contains w 1 to 3 times
+        static void CheckForWWW(string input)
+        {
+            int counter = input.Count(s => s == 'w');
+            Console.WriteLine(counter >= 1 && counter <=3);
+            
+        }
+
+        // 44 make a string of every other character
+        static void OddCharacters()
+        {
+            string input = "This is my sentece that i will reverse so it will be awesome";
+            string output = "";
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    output += input[i];
+                }
+                
+            }
+            Console.WriteLine(output);
+        }
+
+        // 50
+
 
 
         #endregion
