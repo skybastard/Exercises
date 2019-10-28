@@ -21,10 +21,10 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
-            OddCharacters();
+            SortButFive(new int[] { 2, 4, 5, 6, 9, 6, 4, 2, 3, 5, 6, 5, 5, 5, 67, 4});
 
 
-           
+
 
 
             Console.ReadLine();
@@ -55,7 +55,7 @@ namespace Exercises
             int counter = 0;
             int primeSum = 0;
             int n = 2;
-            while(counter < numOfPrimes)
+            while (counter < numOfPrimes)
             {
                 if (isPrime(n))
                 {
@@ -76,7 +76,7 @@ namespace Exercises
 
             var boundary = (int)Math.Floor(Math.Sqrt(num));
 
-            for (int i = 3; i <= boundary; i+=2)
+            for (int i = 3; i <= boundary; i += 2)
             {
                 if (num % i == 0) return false;
             }
@@ -97,12 +97,12 @@ namespace Exercises
         }
 
         // 28 reverse words of a sentence
-         static void ReverseCentence()
+        static void ReverseCentence()
         {
-            string input = "This is my centece that i will reverse so it will be awesome";       
+            string input = "This is my centece that i will reverse so it will be awesome";
             string[] words = input.Split(new[] { " " }, StringSplitOptions.None);
             string result = "";
-            for(int i = words.Length -1; i >= 0; i--)
+            for (int i = words.Length - 1; i >= 0; i--)
             {
                 result += words[i] + " ";
             }
@@ -128,7 +128,7 @@ namespace Exercises
         static void MultiplyArrays()
         {
             int[] array1 = { 2, 1, 4, 5, 6, 7 };
-            int[] array2 = { 4, 6, 3, 7, 78, 9};
+            int[] array2 = { 4, 6, 3, 7, 78, 9 };
             int[] output = new int[array1.Length];
 
             for (int i = 0; i < array1.Length; i++)
@@ -136,7 +136,7 @@ namespace Exercises
                 output[i] = array1[i] * array2[i];
                 Console.WriteLine(output[i]);
             }
-            
+
         }
 
         // 32 write 4 copies of last 4 strings in sentence
@@ -155,8 +155,8 @@ namespace Exercises
         static void CheckForWWW(string input)
         {
             int counter = input.Count(s => s == 'w');
-            Console.WriteLine(counter >= 1 && counter <=3);
-            
+            Console.WriteLine(counter >= 1 && counter <= 3);
+
         }
 
         // 44 make a string of every other character
@@ -170,13 +170,44 @@ namespace Exercises
                 {
                     output += input[i];
                 }
-                
+
             }
             Console.WriteLine(output);
         }
 
-        // 50
+        // 56 check if string is a palindrome
+        static void CheckPalindrome(string input)
+        {
+            char[] inputChar = input.ToCharArray();
+            string output = inputChar.Reverse().ToString();
+            if (output.Equals(input))
+            {
+                Console.WriteLine($"Yes { input } is a palindrome");
+            }
+            else
+            {
+                Console.WriteLine($"{ input } is not a palindrome");
+            }
+        }
 
+        // 61 sort array of integers, leave integer 5 into its place        
+        static void SortButFive(int[] input)
+        {
+            int[] num = input.Where(x => x != 5).OrderBy(x => x).ToArray();
+            int counter = 0;
+            num.Select(x => x >= 0 ? num[counter++] : 5).ToArray();
+            foreach (var item in num)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+
+
+        #endregion
+
+        #region basic algorithm
+        0p
 
 
         #endregion
