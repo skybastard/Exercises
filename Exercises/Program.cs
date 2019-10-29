@@ -21,9 +21,9 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
-            SortButFive(new int[] { 2, 4, 5, 6, 9, 6, 4, 2, 3, 5, 6, 5, 5, 5, 67, 4});
 
 
+            Console.WriteLine(LastThreeUppercase("in")); 
 
 
 
@@ -206,9 +206,48 @@ namespace Exercises
 
         #endregion
 
-        #region basic algorithm
-        0p
+        
 
+
+        #region basic algorithm
+
+        //6 remove string from position n
+        public static void RemoveCharacter(int n, string inputWord)
+        {
+            if(n > inputWord.Length)
+            {
+                Console.WriteLine("there are less letters in that word");
+                return;
+            }
+            Console.WriteLine(inputWord.Remove(n,1));
+        }
+
+        //7 swap first and last letter of a string
+        static void SwapFirstAndLastLetter(string input)
+        {
+            string output = input.Substring(input.Length-1) +
+                input.Substring(1,input.Length - 2) +
+                input.Substring(0,1);
+            Console.WriteLine(output);
+        }
+
+        //24 make last 3 characters uppercase, if less than 3 all uppercase
+        static string LastThreeUppercase(string input)
+        {
+            if(input.Length <= 3)
+            {
+                return input.ToUpper();
+            }
+            else
+            {
+                string output = input.Substring(0, input.Length - 3) +
+                    input.Substring(input.Length - 3).ToUpper();
+                return output;
+            }
+        }
+
+        //29
+        static string 
 
         #endregion
 
