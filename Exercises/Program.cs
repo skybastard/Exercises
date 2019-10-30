@@ -23,7 +23,7 @@ namespace Exercises
 
 
 
-            Console.WriteLine(LastThreeUppercase("in")); 
+            EmployeeMethod();
 
 
 
@@ -206,35 +206,32 @@ namespace Exercises
 
         #endregion
 
-        
-
-
         #region basic algorithm
 
         //6 remove string from position n
         public static void RemoveCharacter(int n, string inputWord)
         {
-            if(n > inputWord.Length)
+            if (n > inputWord.Length)
             {
                 Console.WriteLine("there are less letters in that word");
                 return;
             }
-            Console.WriteLine(inputWord.Remove(n,1));
+            Console.WriteLine(inputWord.Remove(n, 1));
         }
 
         //7 swap first and last letter of a string
         static void SwapFirstAndLastLetter(string input)
         {
-            string output = input.Substring(input.Length-1) +
-                input.Substring(1,input.Length - 2) +
-                input.Substring(0,1);
+            string output = input.Substring(input.Length - 1) +
+                input.Substring(1, input.Length - 2) +
+                input.Substring(0, 1);
             Console.WriteLine(output);
         }
 
         //24 make last 3 characters uppercase, if less than 3 all uppercase
         static string LastThreeUppercase(string input)
         {
-            if(input.Length <= 3)
+            if (input.Length <= 3)
             {
                 return input.ToUpper();
             }
@@ -246,8 +243,47 @@ namespace Exercises
             }
         }
 
-        //29
-        static string 
+
+
+        #endregion
+
+        #region struct
+
+        struct MyStruct
+        {
+            public int x;
+            public int y;
+        }
+        struct Employee
+        {
+            public string firstName { get; set; }
+            public DateOfBirth birthday;
+        }
+        struct DateOfBirth
+        {
+            public int day;
+            public int month;
+            public int year;
+        }
+
+        static void AddStructElements()
+        {
+            MyStruct muhStruct = new MyStruct();
+            int answer = muhStruct.x + muhStruct.y;
+
+            Console.WriteLine(answer);
+            
+        }
+        static void EmployeeMethod()
+        {
+            Employee martin = new Employee() { firstName = "Martin", birthday = new DateOfBirth { day = 23, month = 2, year = 1987 } };
+            Console.WriteLine($"{martin.firstName}, {martin.birthday.day}, {martin.birthday.month}, {martin.birthday.year}");
+        }
+       
+        
+
+
+
 
         #endregion
 
