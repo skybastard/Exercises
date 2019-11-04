@@ -22,8 +22,16 @@ namespace Exercises
             //List<Person> people = ListManager.loadSampleData();
 
 
+            foreach (int item in MakeArray())
+            {
+                //Console.Write(item + " ");
 
-            EmployeeMethod();
+            }
+            Console.WriteLine("\n");
+
+            ShellSort(MakeArray());
+
+
 
 
 
@@ -249,7 +257,7 @@ namespace Exercises
 
         #region struct
 
-        struct MyStruct
+        struct StructNumbers
         {
             public int x;
             public int y;
@@ -266,27 +274,105 @@ namespace Exercises
             public int year;
         }
 
-        static void AddStructElements()
+        static void AddStructElements(dynamic x, dynamic y)
         {
-            MyStruct muhStruct = new MyStruct();
-            int answer = muhStruct.x + muhStruct.y;
-
+            dynamic answer = x + y;
             Console.WriteLine(answer);
-            
+
         }
         static void EmployeeMethod()
         {
             Employee martin = new Employee() { firstName = "Martin", birthday = new DateOfBirth { day = 23, month = 2, year = 1987 } };
             Console.WriteLine($"{martin.firstName}, {martin.birthday.day}, {martin.birthday.month}, {martin.birthday.year}");
         }
-       
+
+        struct SomeStruct
+        {
+            private int num;
+            public int n
+            {
+                get { return num; }
+                set { if (value < 50) num = value; }
+            }
+
+            public void clsMethod()
+            {
+                Console.WriteLine("The stored value is: {0}", num);
+            }
+
+
+
+
+        }
+
         
+       
+
+            
+
+
 
 
 
 
         #endregion
 
+        #region sorting
+        static int[] MakeArray()
+        {
+            Random rnd = new Random();
+            int[] inputArray = new int[5000];
+            for (int i = 0; i < 5000; i++)
+            {
+                inputArray[i] = rnd.Next(1, 500);
+            }
+            return inputArray;
+        }
+
+
+        // ShellSort
+        static void ShellSort(int[] input)
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            
+            int i, j, inc, temp;
+            inc = 3;
+            while(inc > 0)
+            {
+                for(i = 0; i < input.Length; i++)
+                {
+                    j = i;
+                    temp = input[i];
+                    while((j >= inc) && (input[ j - inc] > temp))
+                    {
+                        input[j] = input[j - inc];
+                        j = j - inc;
+                    }
+                    input[j] = temp;
+                }
+                if(inc / 2 != 0)
+                {
+                    inc = inc / 2;
+                }else if(inc == 1)
+                {
+                    inc = 0;
+                }
+                else
+                {
+                    inc = 1;
+                }
+            }
+            timer.Stop();
+            foreach(var element in input)
+            {
+                Console.Write(element + " ");
+            }
+            TimeSpan ts = timer.Elapsed;
+            Console.WriteLine($"\n it took { ts.TotalSeconds } seconds");
+        }
+
+        #endregion
 
 
     }
