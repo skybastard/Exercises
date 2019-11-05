@@ -21,16 +21,14 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
+            int[] randomArray = MakeArray();
 
-            foreach (int item in MakeArray())
-            {
-                //Console.Write(item + " ");
+            ShellSort(randomArray);
 
-            }
-            Console.WriteLine("\n");
+            BubbleSort(randomArray);
 
-            ShellSort(MakeArray());
-
+            CountingSort(randomArray);
+           
 
 
 
@@ -328,6 +326,13 @@ namespace Exercises
             }
             return inputArray;
         }
+        static void PrintResultArrya(int[] sortedArray)
+        {
+            foreach (var item in sortedArray)
+            {
+                Console.Write(item + " ");
+            }
+        }
 
 
         // ShellSort
@@ -364,12 +369,76 @@ namespace Exercises
                 }
             }
             timer.Stop();
-            foreach(var element in input)
-            {
-                Console.Write(element + " ");
-            }
+            //PrintResultArrya(input);
             TimeSpan ts = timer.Elapsed;
-            Console.WriteLine($"\n it took { ts.TotalSeconds } seconds");
+            Console.WriteLine($"\n it took Shellsort { ts.TotalSeconds } seconds");
+        }
+
+        //Bubble sort
+        static void BubbleSort(int[] input)
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            int temporary;
+            for(int p = 0; p <= input.Length - 2; p++)
+            {
+                for(int i = 0; i <= input.Length - 2; i++)
+                {
+                    if(input[i] > input[i + 1])
+                    {
+                        temporary = input[i + 1];
+                        input[i + 1] = input[i];
+                        input[i] = temporary;
+                    }
+                }
+            }
+            timer.Stop();
+            TimeSpan ts = timer.Elapsed;
+            //PrintResultArrya(input);
+            Console.WriteLine($"\n it took Bubblesort { ts.TotalSeconds } seconds");
+        }
+
+        //Counting sort
+        static void CountingSort(int[] input)
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            int[] sortedArray = new int[input.Length];
+            // find the smallest and largest value
+            int minVal = input[0];
+            int maxVal = input[0];
+            for(int i = 1; i < input.Length; i++)
+            {
+                if(input[i] < minVal)
+                {
+                    minVal = input[i];
+                }else if(input[i] > maxVal)
+                {
+                    maxVal = input[i];
+                }
+            }
+            // init array of frequencies
+            int[] counts = new int[maxVal - minVal + 1];
+            // init the frequencies
+            for (int i = 0; i < input.Length; i++)
+            {
+                counts[input[i] - minVal]++;
+            }
+            // recalculate
+            counts[0]--;
+            for (int i = 1; i < counts.Length; i++)
+            {
+                counts[i] = counts[i] + counts[i - 1];
+            }
+            // sort the array
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                sortedArray[counts[input[i] - minVal]--] = input[i];
+            }
+            timer.Stop();
+            TimeSpan ts = timer.Elapsed;
+            PrintResultArrya(sortedArray);
+            Console.WriteLine($"\n it took Counting sort { ts.TotalSeconds } seconds");
         }
 
         #endregion
