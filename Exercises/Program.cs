@@ -28,6 +28,8 @@ namespace Exercises
             BubbleSort(randomArray);
 
             CountingSort(randomArray);
+
+            heapSort(randomArray);
            
 
 
@@ -335,7 +337,7 @@ namespace Exercises
         }
 
 
-        // ShellSort
+        // Shell sort
         static void ShellSort(int[] input)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
@@ -437,8 +439,88 @@ namespace Exercises
             }
             timer.Stop();
             TimeSpan ts = timer.Elapsed;
-            PrintResultArrya(sortedArray);
+            //PrintResultArrya(sortedArray);
             Console.WriteLine($"\n it took Counting sort { ts.TotalSeconds } seconds");
+        }
+
+        //Heap sort
+        static void heapSort<T>  (T[] array) where T : IComparable<T>
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            int heapSize = array.Length;
+
+            buildMaxHeap(array);
+
+            timer.Stop();
+            TimeSpan ts = timer.Elapsed;
+            //PrintResultArrya(sortedArray);
+            Console.WriteLine($"\n it took Heap sort { ts.TotalSeconds } seconds");
+        }
+
+        public static void buildMaxHeap<T> (T[] array) where T : IComparable<T>
+        {
+            int heapSize = array.Length;
+
+            for(int i = (heapSize / 2) - 1; i >= 0; i--)
+            {
+                sink(array, heapSize, i);
+            }
+        }
+        
+        private static void sink<T> (T[] array, int heapSize, int toSinkPos) where T: IComparable<T>
+        {
+            if(getLeftKidPos (toSinkPos) >= heapSize)
+            {
+                return;
+            }
+
+            int largestKidPos;
+            bool leftIsLargest;
+
+            if (getRightKidPos(toSinkPos) >= heapSize || array[getRightKidPos(toSinkPos)].
+                CompareTo(array[getLeftKidPos(toSinkPos)]) < 0)
+            {
+                largestKidPos = getLeftKidPos(toSinkPos);
+                leftIsLargest = true;
+            }
+            else
+            {
+                largestKidPos = getRightKidPos(toSinkPos);
+                leftIsLargest = false;
+            }
+
+            if(array[largestKidPos].CompareTo(array [toSinkPos]) > 0)
+            {
+                swap(array, toSinkPos, largestKidPos);
+
+                if (leftIsLargest)
+                {
+                    sink(array, toSinkPos, getLeftKidPos(toSinkPos));
+                }
+                else
+                {
+                    sink(array, heapSize, getRightKidPos(toSinkPos));
+                }
+            }
+           
+        }
+
+        private static void swap<T> (T[] array, int pos0, int pos1)
+        {
+            T tmpVal = array[pos0];
+            array[pos0] = array[pos1];
+            array[pos1] = tmpVal;
+        }
+
+        private static int getLeftKidPos (int parentPos)
+        {
+            return (2 * (parentPos + 1)) - 1;
+        }
+
+        private static int getRightKidPos(int parentPos)
+        {
+            return 2 * (parentPos + 1);
         }
 
         #endregion
