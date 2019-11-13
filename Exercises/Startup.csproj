@@ -70,6 +70,10 @@
       <Project>{bb1a9f25-b759-4e78-b41f-4749646c5a62}</Project>
       <Name>LinqDemo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SortingAlgorithms\SortingAlgorithms.csproj">
+      <Project>{1e19642d-2fa6-4346-9293-88728b090a1f}</Project>
+      <Name>SortingAlgorithms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TextFileDataDemo\TextFileDataDemo.csproj">
       <Project>{9fdf65e4-5806-465f-abae-db6dcfba8981}</Project>
       <Name>TextFileDataDemo</Name>

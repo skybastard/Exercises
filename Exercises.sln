@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitDemo", "AsyncAwai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqDemo", "LinqDemo\LinqDemo.csproj", "{BB1A9F25-B759-4E78-B41F-4749646C5A62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms", "SortingAlgorithms\SortingAlgorithms.csproj", "{1E19642D-2FA6-4346-9293-88728B090A1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB1A9F25-B759-4E78-B41F-4749646C5A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E19642D-2FA6-4346-9293-88728B090A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E19642D-2FA6-4346-9293-88728B090A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E19642D-2FA6-4346-9293-88728B090A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E19642D-2FA6-4346-9293-88728B090A1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
