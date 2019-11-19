@@ -303,5 +303,51 @@ namespace SortingAlgorithms
             }
             return resultArray; ;
         }
+
+        //Quick sort
+        public static void quickSort(int[] inputArray, int left, int right)
+        {
+            
+            if (left < right)
+            {
+                int pivot = partition(inputArray, left, right);
+                if(pivot > 1)
+                {
+                    quickSort(inputArray, left, pivot - 1);
+                }
+                if(pivot + 1 < right)
+                {
+                    quickSort(inputArray, pivot + 1, right);
+                }
+            }
+            
+        }
+        static int partition(int[] array, int left, int right)
+        {
+            int pivot = array[left];
+            while (true)
+            {
+                while(array[left] < pivot)
+                {
+                    left++;
+                }
+                while(array[right] > pivot)
+                {
+                    right--;
+                }
+                if(left < right)
+                {
+                    if (array[left] == array[right]) return right;
+                    int temp = array[left];
+                    array[left] = array[right];
+                    array[right] = temp;
+                }
+                else
+                {
+                    return right;
+                }
+            }
+        }
+
     }
 }
