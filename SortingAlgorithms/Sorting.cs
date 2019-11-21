@@ -9,11 +9,11 @@ namespace SortingAlgorithms
     public class Sorting
     {
 
-        public static int[] MakeArray()
+        public static int[] MakeArray(int arraySize)
         {
             Random rnd = new Random();
-            int[] inputArray = new int[5000];
-            for (int i = 0; i < 5000; i++)
+            int[] inputArray = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
             {
                 inputArray[i] = rnd.Next(1, 500);
             }
@@ -349,5 +349,39 @@ namespace SortingAlgorithms
             }
         }
 
-    }
+        // Radix sort
+        public static void radixSort(int[] inputArray)
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            int i, j;
+            int[] temp = new int[inputArray.Length];
+            for(int shift = 1; shift > -1; --shift)
+            {
+                j = 0;
+                for(i = 0; i < inputArray.Length; ++i)
+                {
+                    bool move = (inputArray[i] << shift) >= 0;
+                    if(shift == 0? !move : move)
+                    {
+                        inputArray[i - j] = inputArray[i];
+                    }
+                    else
+                    {
+                        temp[j++] = inputArray[i];
+                    }
+                    Array.Copy(temp, 0,inputArray, inputArray.Length - j, j);
+                }
+            }
+            timer.Stop();
+            //PrintResultArrya(input);
+            TimeSpan ts = timer.Elapsed;
+            Console.WriteLine($"\n it took Merge sort { ts.TotalSeconds } seconds");
+        }
+
+        // Selection sort
+
+
+    }   
+        
 }

@@ -24,7 +24,7 @@ namespace Exercises
 
             
 
-            int[] randomArray = Sorting.MakeArray();
+            int[] randomArray = Sorting.MakeArray(500);
 
             Sorting.ShellSort(randomArray);
 
@@ -45,6 +45,8 @@ namespace Exercises
             //PrintResultArrya(input);
             TimeSpan ts = timer.Elapsed;
             Console.WriteLine($"\n it took QuickSort { ts.TotalSeconds } seconds");
+
+            //Sorting.radixSort(randomArray);  // does not work, check shift element
 
 
 
