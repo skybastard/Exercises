@@ -11,7 +11,7 @@ namespace TextFileDataDemo
     public class DataDemo
     {
         // Person class is from GenericsDemo Class
-        public string filePath = "C:/Users/ILS/Documents/test.txt";
+        public string filePath = "D:/test.txt";
         List<Person> people = new List<Person>();
 
 

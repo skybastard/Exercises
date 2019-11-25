@@ -22,32 +22,11 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
-            
+            FileHandling fileHandler = new FileHandling();
 
-            int[] randomArray = Sorting.MakeArray(500);
-
-            Sorting.ShellSort(randomArray);
-
-            Sorting.BubbleSort(randomArray);
-
-            Sorting.CountingSort(randomArray);
-
-            Sorting.HeapSort(randomArray);
-
-            Sorting.insertionSort(randomArray);
-
-            //Sorting.mergeSort(randomArray); array out of bounds error
-
-            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-            timer.Start();
-            Sorting.quickSort(randomArray, 0, randomArray.Length - 1);
-            timer.Stop();
-            //PrintResultArrya(input);
-            TimeSpan ts = timer.Elapsed;
-            Console.WriteLine($"\n it took QuickSort { ts.TotalSeconds } seconds");
-
-            //Sorting.radixSort(randomArray);  // does not work, check shift element
-
+            //fileHandler.removeFile("some filename");
+            //fileHandler.writeLinesToFile();
+            fileHandler.addToExistingFile();
 
 
 
@@ -334,10 +313,7 @@ namespace Exercises
 
         #endregion
 
-        #region sorting
-       
-
-        #endregion
+     
 
 
     }
