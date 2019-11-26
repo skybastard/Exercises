@@ -26,8 +26,9 @@ namespace Exercises
 
             //fileHandler.removeFile("some filename");
             //fileHandler.writeLinesToFile();
-            fileHandler.addToExistingFile();
-
+            //fileHandler.addToExistingFile();
+            //fileHandler.copyFileToAnotherName();
+            fileHandler.moveFileToFolder();
 
 
 

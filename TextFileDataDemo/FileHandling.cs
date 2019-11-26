@@ -70,7 +70,44 @@ namespace TextFileDataDemo
             
         }
 
-        // 9 
+        // copy file to another name
+        public void copyFileToAnotherName()
+        {
+            string firstFileName = "D:/myNewFile.txt";
+            string secondFileName = "D:/myOtherFile.txt";
 
+            if (File.Exists(firstFileName))
+            {
+                File.Delete(firstFileName);
+            }
+
+            using(StreamWriter fileStream = File.CreateText(firstFileName))
+            {
+                fileStream.WriteLine("Helllo and welcome");
+                fileStream.WriteLine("Helllo and welcome");
+                fileStream.WriteLine("Helllo and welcome");
+            }
+
+            File.Copy(firstFileName, secondFileName);
+
+            using(StreamReader sr = File.OpenText(secondFileName))
+            {
+                string s = "";
+                while((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+        }
+
+        // move file to another folder
+        public void moveFileToFolder()
+        {
+            string firstFileName = "D:/myNewFile.txt";
+            string secondFileName = "D:/mysecondNewFile.txt";
+
+            File.Move(firstFileName, secondFileName);
+        }
     }
 }
