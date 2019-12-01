@@ -9,10 +9,9 @@ using GenericsDemo;
 using InterfacesDemo;
 using LinqDemo;
 using TextFileDataDemo;
-using Todo;
 using System.IO;
 using SortingAlgorithms;
-
+using FileOrganizer;
 
 namespace Exercises
 {
@@ -22,17 +21,25 @@ namespace Exercises
         {
             //List<Person> people = ListManager.loadSampleData();
 
-            FileHandling fileHandler = new FileHandling();
+            //var fileHandler = new FileHandling();
+            RecursiveFileProcessor.ProcessDirectory("D:/Download");
+
+            
 
             //fileHandler.removeFile("some filename");
             //fileHandler.writeLinesToFile();
             //fileHandler.addToExistingFile();
             //fileHandler.copyFileToAnotherName();
-            fileHandler.moveFileToFolder();
+            //fileHandler.moveFileToFolder();
+
+            
+            
 
 
 
-            Console.ReadLine();
+
+
+            //Console.ReadLine();
         }
 
         #region basics
@@ -302,10 +309,10 @@ namespace Exercises
 
         }
 
-        
-       
 
-            
+
+
+
 
 
 
@@ -314,7 +321,7 @@ namespace Exercises
 
         #endregion
 
-     
+
 
 
     }
