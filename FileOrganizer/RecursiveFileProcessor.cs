@@ -18,25 +18,41 @@ namespace FileOrganizer
             // Process the list of files found in the directory.
             string[] fileEntries = Directory.GetFiles(targetDirectory);
             foreach (string fileName in fileEntries)
+            {
+                Console.WriteLine(fileName);
                 ProcessFile(fileName);
+            }
+                
 
             // Recurse into subdirectories of this directory.
             string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
             foreach (string subdirectory in subdirectoryEntries)
+            {
+                
                 ProcessDirectory(subdirectory);
+            }
+                
+            
         }
 
         // Insert logic for processing found files here.
         public static void ProcessFile(string fileName)
         {
             FileInfo f = new FileInfo(fileName);
-            if (fileName.Contains("Chicago") && fileName.Contains("S03") && f.Length > 50000000)
+            if (f.Name.ToLower().Contains("grand") && f.Name.ToLower().Contains("tour") && f.Name.ToLower().Contains("s03") && f.Length > 50000000)
             {
                 
-                string destinationFolder = "D:\\Download\\Chicago PD\\Season 3\\";
+                string destinationFolder = $"D:/Download/Top Gear/the grand tour season 3/";
                 string purefileName = Path.GetFileName(fileName);
-                File.Move(fileName, Path.Combine(fileName, destinationFolder + purefileName));
-                Console.WriteLine(purefileName);
+                try {
+                    File.Move(fileName, Path.Combine(fileName, destinationFolder + purefileName));
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                
+                
             }
 
 

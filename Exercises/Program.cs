@@ -39,7 +39,7 @@ namespace Exercises
 
 
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
 
         #region basics
