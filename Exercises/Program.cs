@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using System.IO;
 using SortingAlgorithms;
 using FileOrganizer;
 
+
 namespace Exercises
 {
     class Program
@@ -22,9 +24,9 @@ namespace Exercises
             //List<Person> people = ListManager.loadSampleData();
 
             //var fileHandler = new FileHandling();
-            RecursiveFileProcessor.ProcessDirectory("D:/Download");
+            //RecursiveFileProcessor.ProcessDirectory("D:/Download");
+            //List<string> alphabet = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
-            
 
             //fileHandler.removeFile("some filename");
             //fileHandler.writeLinesToFile();
@@ -32,7 +34,32 @@ namespace Exercises
             //fileHandler.copyFileToAnotherName();
             //fileHandler.moveFileToFolder();
 
+            int setting = 20002126;
+            int secondState = 20002126;
+            Console.WriteLine(Convert.ToString(setting, 2).ToArray());
+            // reverse array for ease of bit counting etc
+            var settingAsBinary = Convert.ToString(setting, 2).Reverse().ToArray();
             
+
+            char[] newBitsValue = { '1', '0' };
+            newBitsValue.Reverse();
+            int bitMaskStart = 11;
+            int bitMaskEnd = bitMaskStart + newBitsValue.Length;
+            
+
+
+            foreach(var bit in newBitsValue)
+            {
+                settingAsBinary[bitMaskStart] = bit;
+                bitMaskStart++;
+            }
+            Console.WriteLine(settingAsBinary.Reverse().ToArray());
+
+
+           
+
+            
+
             
 
 
@@ -41,6 +68,8 @@ namespace Exercises
 
             Console.ReadLine();
         }
+
+        
 
         #region basics
 
