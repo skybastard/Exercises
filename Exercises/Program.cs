@@ -36,14 +36,14 @@ namespace Exercises
 
             int setting = 20002126;
             int secondState = 20002126;
-            Console.WriteLine(Convert.ToString(setting, 2).ToArray());
+            Console.WriteLine($"input as binary: { Convert.ToString(setting, 2) } input as integer { intBuilder(Convert.ToString(setting, 2).ToArray()) }");
             // reverse array for ease of bit counting etc
             var settingAsBinary = Convert.ToString(setting, 2).Reverse().ToArray();
             
 
             char[] newBitsValue = { '1', '0' };
             newBitsValue.Reverse();
-            int bitMaskStart = 11;
+            int bitMaskStart = 12;
             int bitMaskEnd = bitMaskStart + newBitsValue.Length;
             
 
@@ -53,20 +53,19 @@ namespace Exercises
                 settingAsBinary[bitMaskStart] = bit;
                 bitMaskStart++;
             }
-            Console.WriteLine(settingAsBinary.Reverse().ToArray());
-
-
-           
-
+            settingAsBinary.Reverse().ToArray();
+            string s = new string(settingAsBinary);
+            Console.WriteLine($"result as binary: { s } result as integer: {intBuilder(settingAsBinary.Reverse().ToArray())}");
             
-
-            
-
-
-
 
 
             Console.ReadLine();
+        }
+
+        public static int intBuilder(char[] input)
+        {
+            string bitArrayAsString = new string(input);
+            return Convert.ToInt32(bitArrayAsString, 2);
         }
 
         
